@@ -267,10 +267,29 @@
     </li>
 
     <li id=custom-font>
-      <div style="color:red">Custom fonts are not currently supported.</div>
       <svg width=200 height=200>
         <text x=100 y=100 text-anchor=middle dy=14 style="font-family:'Stalemate';font-size:36pt;">Custom Fonts</text>
       </svg>
+      <div style="color:red;">
+        <p>
+        Custom fonts are supported but in a very rudimentary way.
+        </p>
+        <p>
+        <ul>
+          <li>
+            Make sure that the custom font is applied to a non-svg element first:
+            <span style='font-family: "Stalemate"'>hello</span>
+            This will help browser to rasterize SVG correctly onto canvas.
+          </li>
+          <li>
+            @font-face declartion has to be inside document stylesheets (not in the external `link` tag)
+          </li>
+          <li>
+            Only first `url()` is inlined into svg (don't have multiple urls in the font-face).
+          </li>
+        </ul>
+        </p>
+      </div>
     </li>
   </ul>
 </div>
