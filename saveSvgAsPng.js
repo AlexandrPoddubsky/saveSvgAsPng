@@ -272,6 +272,8 @@
         clone.setAttribute('transform', clone.getAttribute('transform').replace(/translate\(.*?\)/, ''));
 
         var svg = document.createElementNS('http://www.w3.org/2000/svg','svg')
+        svg.appendChild(clone)
+        clone = svg;
       } else {
         console.error('Attempted to render non-SVG element', el);
         return;
